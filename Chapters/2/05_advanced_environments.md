@@ -75,7 +75,7 @@ pip install --no-deps package-name
 name: hybrid-ai-env
 channels:
   - conda-forge
-  - pytorch
+  - nvidia
   - defaults
 
 dependencies:
@@ -85,8 +85,9 @@ dependencies:
   - pandas=2.0
   - matplotlib=3.7
   - scikit-learn=1.3
-  - pytorch=2.0
-  - torchvision=0.15
+  - pytorch=2.6.0
+  - torchvision=0.21.0
+  - pytorch-cuda=12.4
   
   # Jupyter ecosystem
   - jupyter=1.0
@@ -261,3 +262,400 @@ class EnvironmentManager:
     def get_env_var(self, key: str, default: Optional[str] = None) -> str:
         """Get environment variable with optional default."""
         value = os.environ.get(key, default)
+        if value is None:
+            raise ValueError(f"Environment variable {key} not found and no default provided")
+        return value
+    
+    def validate_required_vars(self, required_vars: list) -> bool:
+        """Validate that all required environment variables are set."""
+        missing_vars = []
+        for var in required_vars:
+            if not os.environ.get(var):
+                missing_vars.append(var)
+        
+        if missing_vars:
+            raise ValueError(f"Missing required environment variables: {missing_vars}")
+        return True
+
+# Usage
+env_manager = EnvironmentManager()
+try:
+    env_manager.validate_required_vars(['HF_TOKEN', 'OPENAI_API_KEY'])
+    hf_token = env_manager.get_env_var('HF_TOKEN')
+    openai_key = env_manager.get_env_var('OPENAI_API_KEY')
+    print("Environment variables loaded successfully!")
+except ValueError as e:
+    print(f"Environment error: {e}")
+```
+
+### Secure API Key Storage
+
+```python
+# secure_storage.py
+import os
+import json
+import getpass
+from pathlib import Path
+from cryptography.fernet import Fernet
+import base64
+
+class SecureStorage:
+    def __init__(self, storage_file: str = ".secure_keys"):
+        self.storage_file = Path(storage_file)
+        self.key_file = Path(".encryption_key")
+        self.cipher = self._get_cipher()
+    
+    def _get_cipher(self):
+        """Get or create encryption cipher."""
+        if self.key_file.exists():
+            with open(self.key_file, 'rb') as f:
+                key = f.read()
+        else:
+            key = Fernet.generate_key()
+            with open(self.key_file, 'wb') as f:
+                f.write(key)
+            # Set restrictive permissions
+            os.chmod(self.key_file, 0o600)
+        
+        return Fernet(key)
+    
+    def store_key(self, name: str, value: str):
+        """Securely store an API key."""
+        encrypted_value = self.cipher.encrypt(value.encode())
+        
+        # Load existing keys
+        keys = {}
+        if self.storage_file.exists():
+            with open(self.storage_file, 'rb') as f:
+                encrypted_data = f.read()
+                if encrypted_data:
+                    decrypted_data = self.cipher.decrypt(encrypted_data)
+                    keys = json.loads(decrypted_data.decode())
+        
+        # Add new key
+        keys[name] = base64.b64encode(encrypted_value).decode()
+        
+        # Save encrypted data
+        data = json.dumps(keys).encode()
+        encrypted_data = self.cipher.encrypt(data)
+        
+        with open(self.storage_file, 'wb') as f:
+            f.write(encrypted_data)
+        
+        # Set restrictive permissions
+        os.chmod(self.storage_file, 0o600)
+    
+    def get_key(self, name: str) -> str:
+        """Retrieve a stored API key."""
+        if not self.storage_file.exists():
+            raise KeyError(f"No stored keys found")
+        
+        with open(self.storage_file, 'rb') as f:
+            encrypted_data = f.read()
+            decrypted_data = self.cipher.decrypt(encrypted_data)
+            keys = json.loads(decrypted_data.decode())
+        
+        if name not in keys:
+            raise KeyError(f"Key '{name}' not found")
+        
+        encrypted_value = base64.b64decode(keys[name])
+        return self.cipher.decrypt(encrypted_value).decode()
+
+# Usage
+storage = SecureStorage()
+
+# Store keys securely
+storage.store_key('hf_token', 'your_huggingface_token')
+storage.store_key('openai_key', 'your_openai_key')
+
+# Retrieve keys
+hf_token = storage.get_key('hf_token')
+openai_key = storage.get_key('openai_key')
+```
+
+---
+
+## Docker Containerization
+
+### Basic Dockerfile for AI Environment
+
+Create a `Dockerfile`:
+```dockerfile
+# Use official Python runtime with CUDA support
+FROM nvidia/cuda:12.4-devel-ubuntu22.04
+
+# Set environment variables
+ENV PYTHONUNBUFFERED=1
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    python3.10 \
+    python3-pip \
+    git \
+    wget \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Miniconda
+RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh && \
+    bash miniconda.sh -b -p /opt/conda && \
+    rm miniconda.sh
+ENV PATH="/opt/conda/bin:${PATH}"
+
+# Create working directory
+WORKDIR /app
+
+# Copy environment file
+COPY environment.yml .
+
+# Create conda environment
+RUN conda env create -f environment.yml && \
+    conda clean -afy
+
+# Make RUN commands use the new environment
+SHELL ["conda", "run", "-n", "ai-env", "/bin/bash", "-c"]
+
+# Copy application code
+COPY . .
+
+# Expose port for Jupyter
+EXPOSE 8888
+
+# Set default command
+CMD ["conda", "run", "-n", "ai-env", "jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root"]
+```
+
+### Docker Compose Configuration
+
+Create `docker-compose.yml`:
+```yaml
+version: '3.8'
+
+services:
+  ai-environment:
+    build: .
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./notebooks:/app/notebooks
+      - ./data:/app/data
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - CUDA_VISIBLE_DEVICES=0
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    networks:
+      - ai-network
+
+  mlflow:
+    image: python:3.10
+    ports:
+      - "5000:5000"
+    command: pip install mlflow && mlflow server --host 0.0.0.0 --port 5000
+    networks:
+      - ai-network
+
+networks:
+  ai-network:
+    driver: bridge
+```
+
+### Multi-stage Docker Build
+
+```dockerfile
+# Build stage
+FROM nvidia/cuda:12.4-devel-ubuntu22.04 as builder
+
+# Install build dependencies
+RUN apt-get update && apt-get install -y \
+    python3.10 \
+    python3-pip \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Python packages
+COPY requirements-build.txt .
+RUN pip install --user --no-cache-dir -r requirements-build.txt
+
+# Runtime stage
+FROM nvidia/cuda:12.4-runtime-ubuntu22.04
+
+# Install runtime dependencies
+RUN apt-get update && apt-get install -y \
+    python3.10 \
+    python3-pip \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy installed packages from builder
+COPY --from=builder /root/.local /root/.local
+
+# Set environment variables
+ENV PATH=/root/.local/bin:$PATH
+
+# Copy application
+COPY . /app
+WORKDIR /app
+
+# Set default command
+CMD ["python3", "app.py"]
+```
+
+---
+
+## Performance Optimization
+
+### Environment Size Optimization
+
+```bash
+# Remove unnecessary packages
+conda remove --name myenv --all
+conda create -n optimized python=3.10 numpy pandas scikit-learn
+
+# Use mamba for faster dependency resolution
+conda install -n base -c conda-forge mamba
+mamba create -n fast-env python=3.10 numpy pandas scikit-learn
+
+# Clean conda cache
+conda clean --all
+
+# Remove pip cache
+pip cache purge
+```
+
+### GPU-Optimized Environment
+
+```yaml
+name: gpu-optimized-env
+channels:
+  - nvidia
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.10
+  - cudatoolkit=12.4
+  - pytorch=2.6.0
+  - torchvision=0.21.0
+  - torchaudio=2.6.0
+  - pytorch-cuda=12.4
+  
+  # GPU-accelerated libraries
+  - cupy=12.0
+  
+  # Core packages
+  - numpy=1.24
+  - pandas=2.0
+  - scikit-learn=1.3
+  
+  # Performance libraries
+  - numba=0.57
+  - numexpr=2.8
+  
+  # Jupyter
+  - jupyter=1.0
+  - ipykernel=6.0
+```
+
+### Memory Optimization
+
+```python
+# memory_optimization.py
+import gc
+import torch
+import psutil
+
+class MemoryOptimizer:
+    def __init__(self):
+        self.process = psutil.Process()
+    
+    def get_memory_usage(self):
+        """Get current memory usage in MB."""
+        return self.process.memory_info().rss / 1024 / 1024
+    
+    def clear_gpu_cache(self):
+        """Clear GPU memory cache."""
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+            torch.cuda.synchronize()
+            gc.collect()
+    
+    def optimize_dataframe(self, df):
+        """Optimize pandas DataFrame memory usage."""
+        # Convert object columns to category if appropriate
+        for col in df.select_dtypes(include=['object']).columns:
+            if df[col].nunique() / len(df) < 0.5:
+                df[col] = df[col].astype('category')
+        
+        # Downcast numeric columns
+        for col in df.select_dtypes(include=['int']).columns:
+            df[col] = pd.to_numeric(df[col], downcast='integer')
+        
+        for col in df.select_dtypes(include=['float']).columns:
+            df[col] = pd.to_numeric(df[col], downcast='float')
+        
+        return df
+
+# Usage
+optimizer = MemoryOptimizer()
+print(f"Memory usage: {optimizer.get_memory_usage():.2f} MB")
+optimizer.clear_gpu_cache()
+```
+
+---
+
+## Practical Exercises
+
+### Exercise 1: Create GPU-Optimized Environment
+
+```bash
+# Create GPU-optimized environment
+conda create -n gpu-ai-env python=3.10
+
+# Activate environment
+conda activate gpu-ai-env
+
+# Install CUDA and PyTorch with GPU support
+conda install -c nvidia -c conda-forge \
+    cudatoolkit=12.4 \
+    pytorch=2.6.0 \
+    torchvision=0.21.0 \
+    torchaudio=2.6.0 \
+    pytorch-cuda=12.4
+
+# Install additional packages
+conda install -c conda-forge numpy pandas matplotlib scikit-learn
+pip install transformers huggingface_hub
+
+# Test GPU availability
+python -c "
+import torch
+print(f'PyTorch version: {torch.__version__}')
+print(f'CUDA available: {torch.cuda.is_available()}')
+print(f'CUDA version: {torch.version.cuda}')
+print(f'GPU count: {torch.cuda.device_count()}')
+if torch.cuda.is_available():
+    print(f'Current GPU: {torch.cuda.current_device()}')
+    print(f'GPU name: {torch.cuda.get_device_name(0)}')
+"
+```
+
+### Exercise 2: Docker Container with AI Environment
+
+Create `Dockerfile`:
+```dockerfile
+FROM nvidia/cuda:12.4-devel-ubuntu22.04
+
+# Install Python and system dependencies
+RUN apt-get update && apt-get install -y \
+    python3.10 \
+    python3-pip \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+#
