@@ -1,4 +1,4 @@
-# AI Engineering Preparatory Course — Modules 3 and 4: Python Basics & Conda Environments
+# Chapter 2: Python and Environment Management
 
 ## Overview
 
