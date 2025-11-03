@@ -1,131 +1,135 @@
-Section 5: Hugging Face Platform/Library Basics (4 hours)
+# Chapter 4: Hugging Face Platform and Local Inference
 
-Learning Objectives
+This chapter covers cloud-based inference with Hugging Face and local deployment using Ollama and vLLM.
 
+**Total Duration:** 10 hours  
+**Prerequisites:** Python 3.10+, CUDA 12.4+, PyTorch 2.6.0+
 
-Understand what Hugging Face Inference Providers are, how to select providers, implement failover and timeouts, and manage authentication and billing. 
-Use OpenAI-compatible interfaces with Hugging Face and connect to local endpoints via HTTP for unified client code patterns. 
+---
 
-Concepts and Explanations
+## Hugging Face Platform (4 hours)
 
+### 📚 Documentation
 
-Inference Providers: A set of backend providers behind a unified interface on Hugging Face; you can choose providers explicitly or allow provider="auto" for dynamic selection based on availability and performance. This supports failover and configurable timeouts to improve reliability. 
-Authentication & Billing: Securely use tokens (e.g., HF tokens) and understand how usage can be billed per provider; design workflows that keep credentials out of source control (e.g., environment variables, secret stores). 
-OpenAI-Compatible Interfaces: Many inference backends expose an OpenAI-style API, enabling common client libraries and payload schemas across cloud and local endpoints. 
-Connecting to Local Endpoints via HTTP: Use HTTP clients (e.g., requests) or OpenAI-compatible SDKs configured with a base_url pointing to your local service. 
+- **[Hugging Face Overview](huggingface_overview.md)** - Introduction and learning path
+- **[Core Concepts](core_concepts.md)** - Inference providers, authentication, APIs
+- **[Authentication & Security](authentication_security.md)** - Token management and best practices
+- **[Provider Selection](provider_selection.md)** - Choosing providers and implementing failover
 
-Suggested Teaching Flow
+### 💻 Jupyter Notebooks (Coding Practice)
 
+- **[Image Generation Practice](image_generation_practice.ipynb)** - Text-to-image with provider comparison
+- **[Chat Inference Practice](chat_inference_practice.ipynb)** - Conversational AI and benchmarking
 
-Lecture/Demo (60–75 min): Review provider selection strategies, authentication/token handling, and timeout/retry patterns. Show how OpenAI-compatible clients can talk to both Hugging Face providers and local endpoints with minimal code changes. 
-Guided Practice (30–45 min): Students configure credentials and run a first cloud inference. 
-Measurement & Comparison (30–45 min): Benchmark provider="auto" vs. explicitly selected providers and record latency/stability differences. 
+### Learning Objectives
 
-Hands-On Lab (Step-by-Step)
+- ✅ Understand Hugging Face Inference Providers and selection strategies
+- ✅ Implement secure authentication and credential management
+- ✅ Use OpenAI-compatible interfaces with Hugging Face
+- ✅ Compare provider performance (auto vs explicit selection)
+- ✅ Implement failover and timeout strategies
 
+### Quick Start
 
-Goal: Run one image generation and one chat inference using Hugging Face Inference Providers; compare provider="auto" vs explicit selection for latency and stability. 
+1. Read [Hugging Face Overview](huggingface_overview.md)
+2. Review [Core Concepts](core_concepts.md)
+3. Setup authentication following [Authentication & Security](authentication_security.md)
+4. Complete [Image Generation Practice](image_generation_practice.ipynb)
+5. Complete [Chat Inference Practice](chat_inference_practice.ipynb)
 
-Set credentials securely (e.g., export HF_TOKEN in shell; avoid hardcoding in notebooks). 
- 
-Image generation:
-Use a Hugging Face client or HTTP POST to the model’s inference endpoint to generate an image from a text prompt.
-Repeat the same prompt with provider="auto" and with a specific provider; record response time and any errors/timeouts. 
- 
-Chat inference:
-Send a user message to a chat-capable model via the Hugging Face Inference Providers API.
-Compare outputs and latency across provider="auto" and explicit provider. 
-Logging & Metrics:
-Record average latency (ms), success rate, and any failovers; summarize stability differences. 
+---
 
-Example Snippets (for illustration)
+## Local Inference Endpoints (6 hours)
 
+### 📚 Documentation
 
-Python (image generation, pseudocode):
-Using huggingface_hub.InferenceClient with token, run text-to-image; set provider="auto" vs provider="X"; measure time with time.perf_counter(). 
-Python (chat inference, pseudocode):
-Use client.chat or a generic POST to the provider’s chat endpoint; collect model output and timing; log exceptions to assess timeouts/failovers. 
+- **[Local Inference Overview](local_inference_overview.md)** - Introduction and requirements
+- **[Inference Engines](inference_engines.md)** - Complete guide to Ollama and vLLM
 
-Assessment Checkpoints
+### 💻 Jupyter Notebooks (Coding Practice)
 
+- **[Ollama Practice](ollama_practice.ipynb)** - Install, configure, and test Ollama
 
-Student can authenticate without exposing tokens in code. 
-Student can perform both image and chat inference via providers. 
-Student can measure and compare latency/stability for provider="auto" vs explicit providers and explain trade-offs. 
+### Learning Objectives
 
-Common Pitfalls & Tips
+- ✅ Install and operate Ollama via CLI (pull/run/list/serve)
+- ✅ Use Ollama's REST and OpenAI-compatible APIs
+- ✅ Install and run vLLM in offline and service modes
+- ✅ Configure vLLM's OpenAI-compatible server
+- ✅ Compare throughput and latency between Ollama and vLLM
+- ✅ Understand memory and hardware considerations
 
+### Quick Start
 
-Token misconfiguration: Ensure environment variables are loaded in terminal/Notebook sessions. 
-Timeouts too short: Start with conservative timeouts and implement retries/backoff. 
- 
-Provider mismatch: Some models perform differently across providers; treat provider selection as a tuning parameter. 
+1. Read [Local Inference Overview](local_inference_overview.md)
+2. Study [Inference Engines](inference_engines.md) guide
+3. Complete [Ollama Practice](ollama_practice.ipynb)
+4. Experiment with vLLM deployment
+5. Run performance benchmarks
 
-Section 6: Local Inference Endpoints — Ollama and vLLM (6 hours)
+---
 
-Learning Objectives
+## Assessment Checkpoints
 
+### Hugging Face Platform
+- ✅ Authenticate without exposing tokens in code
+- ✅ Perform image and chat inference via Hugging Face providers
+- ✅ Measure and compare latency/stability for different provider strategies
+- ✅ Implement failover and error handling
 
-Install and operate Ollama via CLI (pull/run/list/serve), use its local REST and OpenAI-compatible service, and understand throughput/memory considerations. 
-Install and run vLLM in offline/service modes, use its OpenAI-compatible server, and compare throughput/latency with Ollama. 
+### Local Inference Endpoints
+- ✅ Install, start, and query both Ollama and vLLM
+- ✅ Use Python clients for chat/completions against local endpoints
+- ✅ Measure throughput (tokens/sec) and latency
+- ✅ Articulate performance differences and use cases
 
-Concepts and Explanations
+---
 
+## Common Pitfalls & Tips
 
-Ollama Overview: A local inference runner with a simple CLI and REST API, suitable for developer laptops and workstations. It can also expose OpenAI-compatible endpoints for standardized client usage. 
- 
-vLLM Overview: A high-performance inference engine/server with an OpenAI-compatible API; optimized for throughput and efficient memory usage, often favored for serving larger models or multi-user workloads. 
- 
-Throughput & Memory: Larger models need more VRAM/RAM; batch size, tensor parallelism, and KV cache tuning impact throughput and latency; measure under realistic loads. 
- 
+### Hugging Face Platform
+- ⚠️ **Token Security**: Never hardcode tokens; use environment variables
+- ⚠️ **Timeouts**: Start conservative and implement exponential backoff
+- ⚠️ **Provider Selection**: Different providers have different characteristics
+- ⚠️ **Rate Limiting**: Implement delays between requests
 
-Suggested Teaching Flow
+### Local Inference Endpoints
+- ⚠️ **Port Conflicts**: Ensure services use different ports (Ollama: 11434, vLLM: 8000)
+- ⚠️ **Model Size**: Choose models that fit in available VRAM/RAM
+- ⚠️ **Resource Monitoring**: Track GPU/CPU usage during tests
+- ⚠️ **API Compatibility**: Verify OpenAI-compatible payload formats
 
+---
 
-Lecture/Demo (60–90 min): Install Ollama and vLLM; explain CLI/server modes; start services; review endpoint URLs and basic authentication options; discuss hardware constraints and performance trade-offs. 
-Guided Practice (60 min): Students run both endpoints locally; send chat/completions using Python clients. 
-Benchmarking (60–90 min): Compare throughput and latency across endpoints under similar prompts and parameters; capture logs and resource usage. 
+## Hardware Requirements
 
-Hands-On Lab (Step-by-Step)
+### Minimum
+- CPU: 4+ cores
+- RAM: 16GB
+- GPU: 8GB VRAM (for 7B models)
+- Storage: 50GB free
 
+### Recommended
+- CPU: 8+ cores
+- RAM: 32GB+
+- GPU: 16GB+ VRAM (for 13B models)
+- Storage: 100GB+ SSD
 
-Goal: Run Ollama and vLLM locally; perform chat/completions via Python clients; compare throughput and latency across endpoints. 
+---
 
-Ollama installation & basic CLI:
-Install Ollama; verify with ollama --version. 
-Pull and run a model: ollama pull <model>; ollama run <model>; list with ollama list; start service with ollama serve. 
- 
-Test REST: POST to http://localhost:11434/api/chat or completions endpoint with a prompt; validate JSON response. 
- 
-vLLM setup:
-Install vLLM and start the OpenAI-compatible server (e.g., python -m vllm.entrypoints.openai.api_server --model <model>). 
- 
-Confirm server health; note base_url (e.g., http://localhost:8000/v1). 
-Python client tests:
-Use OpenAI-compatible SDK with base_url set to the local endpoint; send chat/completions; capture response time and token throughput. 
- 
-Benchmark & Compare:
-Run standardized prompts across Ollama and vLLM; record tokens/sec, average latency, and max memory usage; summarize trade-offs in a short write-up. 
+## Additional Resources
 
-Example Snippets (for illustration)
+- [Hugging Face Inference API Docs](https://huggingface.co/docs/api-inference)
+- [Ollama Documentation](https://github.com/ollama/ollama)
+- [vLLM Documentation](https://docs.vllm.ai/)
+- [OpenAI API Reference](https://platform.openai.com/docs/api-reference)
 
+---
 
-Ollama REST (Python requests):
-POST a JSON payload with messages to /api/chat; parse streaming or full response; log timing. 
-vLLM OpenAI-compatible client:
-Configure client with base_url=http://localhost:8000/v1 and api_key="dummy"; call chat.completions.create; measure latency and tokens. 
+## Next Steps
 
-Assessment Checkpoints
-
-
-Student can install, start, and query both Ollama and vLLM. 
-Student can use Python clients to perform chat/completions against local endpoints. 
-Student can measure throughput/latency and articulate performance differences between Ollama and vLLM. 
-
-Common Pitfalls & Tips
-
-
-Port conflicts: Ensure services are not overlapping; change ports or stop existing services. 
-Model size vs hardware: Pick models that fit device memory; monitor usage during tests. 
- 
-SDK/base_url mismatches: Verify you’re sending OpenAI-compatible payloads to endpoints that support that protocol. 
+After completing this chapter:
+- Build a production chatbot application
+- Implement load balancing for multiple GPUs
+- Explore model quantization techniques
+- Deploy inference services to production 
