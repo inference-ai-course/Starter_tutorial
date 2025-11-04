@@ -25,7 +25,7 @@ This tutorial is designed for developers who want to build production-ready AI a
 
 ### [Chapter 1: Tool Preparation](./Chapters/1/Chapter1.md)
 
-**Duration:** 3-4 hours  
+**Duration:** 4-5 hours (2 hours learning + 2-3 hours setup & practice)  
 **Focus:** Development environment setup and essential tools
 
 Master the foundational tools for modern AI development workflows:
@@ -47,7 +47,7 @@ Master the foundational tools for modern AI development workflows:
 
 ### [Chapter 2: Python and Environment Management](./Chapters/2/Chapter2.md)
 
-**Duration:** 8-10 hours  
+**Duration:** 10-12 hours (5 hours learning + 5-7 hours exercises & practice)  
 **Focus:** Python fundamentals and reproducible environments
 
 Build a solid Python foundation and learn professional environment management:
@@ -93,7 +93,7 @@ Build a solid Python foundation and learn professional environment management:
 
 ### [Chapter 3: AI Engineering Fundamentals](./Chapters/3/Chapter3.md)
 
-**Duration:** 12-15 hours  
+**Duration:** 14-18 hours (8 hours learning + 6-10 hours implementation & experimentation)  
 **Focus:** Function calling, prompt engineering, and model interfaces
 
 Learn to build reliable, production-ready AI systems:
@@ -141,7 +141,7 @@ Learn to build reliable, production-ready AI systems:
 
 ### [Chapter 4: Hugging Face Platform and Local Inference](./Chapters/4/Chapter4.md)
 
-**Duration:** 10 hours  
+**Duration:** 10-12 hours (5 hours learning + 5-7 hours deployment & testing)  
 **Focus:** Cloud-based and local AI model deployment
 
 Master both cloud and local inference strategies:
@@ -175,34 +175,77 @@ Master both cloud and local inference strategies:
 
 ---
 
+### [Chapter 5: Resource Monitoring and Containerization](./Chapters/5/Chapter5.md)
+
+**Duration:** 8-10 hours (4 hours learning + 4-6 hours containerization & troubleshooting)  
+**Focus:** Production monitoring, debugging, and Docker deployment
+
+Learn essential production skills for deploying and maintaining AI systems:
+
+**Part 1: Resource Monitoring and Troubleshooting (3-4 hours)**
+- GPU, CPU, memory, and disk monitoring
+- Common error patterns and diagnostics
+- Authentication and port conflict resolution
+- GPU/CUDA compatibility troubleshooting
+- Performance profiling and optimization
+- Effective logging and debugging strategies
+- Timeout and retry mechanisms
+
+**Part 2: Dockerization (5-6 hours)**
+- Docker fundamentals (images, containers, Dockerfile)
+- Building custom images for AI/ML projects
+- Multi-service orchestration with Docker Compose
+- GPU support and CUDA configuration in containers
+- Best practices for containerizing PyTorch applications
+- Reproducible deployment workflows
+
+**Key Outcomes:**
+- Monitor and optimize resource utilization in AI systems
+- Diagnose and resolve production deployment issues
+- Create production-ready Docker images for AI applications
+- Configure GPU support in containerized environments
+- Orchestrate multi-service AI applications
+- Implement robust error handling and monitoring
+
+**Prerequisites:** Chapter 3 and 4 completion recommended
+
+**Additional Requirements:**
+- Docker Desktop or Docker Engine installed
+- nvidia-docker2 for GPU support (if using GPU)
+- Basic understanding of networking and ports
+
+---
+
 ## 🚀 Getting Started
 
 ### Quick Start Path
 
-1. **Complete Chapter 1** - Set up your development environment (3-4 hours)
-2. **Work through Chapter 2** - Master Python and environments (8-10 hours)
-3. **Study Chapter 3** - Learn AI engineering fundamentals (12-15 hours)
-4. **Deploy with Chapter 4** - Build production inference systems (10 hours)
+1. **Complete Chapter 1** - Set up your development environment (4-5 hours)
+2. **Work through Chapter 2** - Master Python and environments (10-12 hours)
+3. **Study Chapter 3** - Learn AI engineering fundamentals (14-18 hours)
+4. **Deploy with Chapter 4** - Build production inference systems (10-12 hours)
+5. **Master Chapter 5** - Production monitoring and containerization (8-10 hours)
 
-**Total Time Investment:** 33-39 hours for comprehensive mastery
+**Total Time Investment:** 46-57 hours for comprehensive mastery
 
 ### Alternative Learning Paths
 
 **For Experienced Python Developers:**
-- Skip Chapter 2 basics, review environment management only
-- Start with Chapter 3 for AI-specific skills
-- Estimated time: 22-29 hours
+- Skip Chapter 2 basics, review environment management only (2-3 hours)
+- Focus on Chapters 3, 4, and 5 for AI-specific skills
+- Estimated time: 32-40 hours
 
 **For Quick Prototyping:**
 - Chapter 1: Tool setup (3 hours)
-- Chapter 3 Part 2: Prompt engineering (4 hours)
-- Chapter 4 Part 1: Hugging Face deployment (4 hours)
-- Estimated time: 11 hours
+- Chapter 3 Part 2: Prompt engineering (5-6 hours)
+- Chapter 4 Part 1: Hugging Face deployment (4-5 hours)
+- Estimated time: 12-14 hours
 
 **For Production Deployment:**
 - Complete all chapters sequentially
-- Focus on labs and assessment checkpoints
-- Estimated time: 40+ hours with practice
+- Focus on labs, assessment checkpoints, and hands-on projects
+- Extra time for experimentation and troubleshooting
+- Estimated time: 55-70 hours with comprehensive practice
 
 ---
 
@@ -263,7 +306,9 @@ By completing this tutorial series, you will be able to:
 5. **Evaluate and optimize** AI model performance systematically
 6. **Deploy AI models** using cloud and local infrastructure
 7. **Build scalable applications** with proper authentication and monitoring
-8. **Troubleshoot common issues** in AI development workflows
+8. **Monitor and optimize** resource utilization in production systems
+9. **Containerize AI applications** for reproducible deployments
+10. **Troubleshoot and debug** common issues in AI development workflows
 
 ---
 
