@@ -1,11 +1,58 @@
 # Part 2: Prompt Engineering and Evaluation
 
+## Overview
+
+**The uncomfortable truth:** Language models are like brilliant but unreliable employees. They can write beautiful code one moment and fabricate facts the next. They're creative when you need precision, and rigid when you need flexibility.
+
+**Prompt engineering is how you manage this unpredictable genius.**
+
+This isn't about "writing better prompts"—it's about **engineering reliable systems** from inherently unreliable components. Just as software engineers build fault-tolerant distributed systems, prompt engineers build consistent AI systems from stochastic language models.
+
+**By the end of this section, you'll transform:**
+- Random outputs → Consistent, predictable results
+- Hallucinations → Fact-checked, grounded responses  
+- Expensive verbosity → Cost-optimized precision
+- Trial-and-error → Systematic, measurable improvement
+
+---
+
+## The Prompt Engineering Mindset
+
+### Think Like a Systems Engineer, Not a Writer
+
+**Common misconception:** "Prompt engineering is about being good with words"
+
+**Reality:** Prompt engineering is about:
+1. **Constraint design** - Defining boundaries for model behavior
+2. **Template systems** - Building reusable, versioned components
+3. **Quality metrics** - Measuring and optimizing performance
+4. **Error handling** - Managing failures gracefully
+5. **Cost optimization** - Balancing quality with efficiency
+
+**Analogy:**
+
+```
+Writing Prompts : Prompt Engineering
+        ↓                   ↓
+Writing Code  :  Software Engineering
+```
+
+You're not just writing—you're building systems.
+
+---
+
 ## Learning Objectives
 
-- Craft effective prompts: system roles, clear constraints, structured outputs, few-shot examples, and reasoning variants
-- Reduce hallucinations with guardrails and evaluate prompts for quality, stability, and parameter sensitivity (temperature, top_p) across backends
-- Implement evaluation frameworks using both automated and human assessment methods
-- Build production-ready prompt templates with proper validation and monitoring
+By the end of this section, you'll be able to:
+
+- ✅ **Craft** effective prompts: system roles, constraints, structured outputs, few-shot examples
+- ✅ **Prevent** hallucinations with guardrails and validation techniques
+- ✅ **Evaluate** prompts systematically for quality, stability, and cost-effectiveness
+- ✅ **Optimize** parameters (temperature, top_p) for specific use cases
+- ✅ **Implement** evaluation frameworks (LLM-as-judge, human-in-the-loop)
+- ✅ **Build** production-ready prompt templates with version control and monitoring
+
+---
 
 ## 2.0 Why Prompt Engineering Matters
 

@@ -1,8 +1,66 @@
 # Part 5: Advanced Environment Topics
 
-## Introduction
+## Overview
 
-This section covers advanced topics in environment management, including mixed package manager usage, Jupyter integration, secure handling of secrets, and containerization with Docker. These skills are essential for professional AI engineering workflows.
+You've mastered basic environment management. Now it's time for the advanced techniques that professionals use in production: mixing package managers safely, integrating with Jupyter, securing API keys, and containerizing with Docker.
+
+These aren't just "nice to have" skills—they're essential for:
+- Production ML deployments
+- Team collaboration at scale  
+- Secure handling of credentials
+- Reproducible research infrastructure
+
+---
+
+## Why Advanced Environment Management?
+
+### The Production Gap
+
+**Research environment (your laptop):**
+```
+conda activate my-env
+jupyter notebook
+→ Quick experiments, rapid iteration
+```
+
+**Production environment (cloud/server):**
+```
+- No conda installed
+- No root access
+- Security restrictions
+- Must run in containers
+- API keys must be secure
+- Multiple services coordinating
+→ Need Docker, proper secrets management
+```
+
+**This section bridges that gap.**
+
+### Real-World Scenarios
+
+1. **Mixed Package Management**
+   - Some packages only on PyPI (pip)
+   - Some only on conda-forge
+   - Need both without breaking things
+
+2. **Jupyter at Scale**
+   - Multiple kernels for different projects
+   - Remote Jupyter servers
+   - Team shared environments
+
+3. **Secrets Management**
+   - API keys (OpenAI, HuggingFace)
+   - Database credentials
+   - OAuth tokens
+   - Need secure, versioned storage
+
+4. **Containerization**
+   - Reproducible across platforms
+   - Isolated from host system
+   - Deploy to cloud/Kubernetes
+   - Version control entire stack
+
+---
 
 ## Table of Contents
 1. [Mixed Conda/Pip Usage](#mixed-conda-pip-usage)
