@@ -136,6 +136,7 @@ Use Jupyter notebooks for interactive development, visualization, and documentat
 - Set up AI/ML environment (Python 3.10+, PyTorch 2.6.0+, CUDA 12.4+)
 - Export and recreate environments
 - Register kernels for Jupyter
+- **Real-world exercise**: Analyze Titanic dataset with pandas (data exploration, visualization, feature engineering)
 
 #### [SSH Setup Lab](ssh_setup_lab.ipynb)
 - Generate and manage SSH keys
