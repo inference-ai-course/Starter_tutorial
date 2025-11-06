@@ -12,8 +12,8 @@ This chapter covers essential skills for production-ready AI systems: monitoring
 ## 5.1 Resource Monitoring and Troubleshooting
 
 **Duration**: 2 hours  
-**Learning Materials**: [resource_monitoring.md](./resource_monitoring.md)  
-**Practice Notebook**: [resource_monitoring_practice.ipynb](./resource_monitoring_practice.ipynb)
+**Learning Materials**: [resource_monitoring.md](./01_resource_monitoring.md)  
+**Practice Notebook**: [resource_monitoring_practice.ipynb](./01_resource_monitoring_practice.ipynb)
 
 ### Brief Introduction
 
@@ -31,8 +31,8 @@ Learn to monitor GPU usage, CPU performance, memory consumption, and diagnose co
 ## 5.2 Dockerization of Your Project/Environment
 
 **Duration**: 4 hours  
-**Learning Materials**: [dockerization.md](./dockerization.md)  
-**Practice Notebook**: [dockerization_practice.ipynb](./dockerization_practice.ipynb)
+**Learning Materials**: [dockerization.md](./02_dockerization.md)  
+**Practice Notebook**: [dockerization_practice.ipynb](./02_dockerization_practice.ipynb)
 
 ### Brief Introduction
 

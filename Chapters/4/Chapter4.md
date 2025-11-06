@@ -11,15 +11,15 @@ This chapter covers cloud-based inference with Hugging Face and local deployment
 
 ### 📚 Documentation
 
-- **[Hugging Face Overview](huggingface_overview.md)** - Introduction and learning path
-- **[Core Concepts](core_concepts.md)** - Inference providers, authentication, APIs
-- **[Authentication & Security](authentication_security.md)** - Token management and best practices
-- **[Provider Selection](provider_selection.md)** - Choosing providers and implementing failover
+- **[01 Hugging Face Overview](01_huggingface_overview.md)** - Introduction and learning path
+- **[02 Core Concepts](02_core_concepts.md)** - Inference providers, authentication, APIs
+- **[03 Authentication & Security](03_authentication_security.md)** - Token management and best practices
+- **[04 Provider Selection](04_provider_selection.md)** - Choosing providers and implementing failover
 
 ### 💻 Jupyter Notebooks (Coding Practice)
 
-- **[Image Generation Practice](image_generation_practice.ipynb)** - Text-to-image with provider comparison
-- **[Chat Inference Practice](chat_inference_practice.ipynb)** - Conversational AI and benchmarking
+- **[Image Generation Practice](01_image_generation_practice.ipynb)** - Text-to-image with provider comparison
+- **[Chat Inference Practice](02_chat_inference_practice.ipynb)** - Conversational AI and benchmarking
 
 ### Learning Objectives
 
@@ -31,11 +31,11 @@ This chapter covers cloud-based inference with Hugging Face and local deployment
 
 ### Quick Start
 
-1. Read [Hugging Face Overview](huggingface_overview.md)
-2. Review [Core Concepts](core_concepts.md)
-3. Setup authentication following [Authentication & Security](authentication_security.md)
-4. Complete [Image Generation Practice](image_generation_practice.ipynb)
-5. Complete [Chat Inference Practice](chat_inference_practice.ipynb)
+1. Read [01 Hugging Face Overview](01_huggingface_overview.md)
+2. Review [02 Core Concepts](02_core_concepts.md)
+3. Setup authentication following [03 Authentication & Security](03_authentication_security.md)
+4. Complete [Image Generation Practice](01_image_generation_practice.ipynb)
+5. Complete [Chat Inference Practice](02_chat_inference_practice.ipynb)
 
 ---
 
@@ -43,12 +43,12 @@ This chapter covers cloud-based inference with Hugging Face and local deployment
 
 ### 📚 Documentation
 
-- **[Local Inference Overview](local_inference_overview.md)** - Introduction and requirements
-- **[Inference Engines](inference_engines.md)** - Complete guide to Ollama and vLLM
+- **[05 Local Inference Overview](05_local_inference_overview.md)** - Introduction and requirements
+- **[06 Inference Engines](06_inference_engines.md)** - Complete guide to Ollama and vLLM
 
 ### 💻 Jupyter Notebooks (Coding Practice)
 
-- **[Ollama Practice](ollama_practice.ipynb)** - Install, configure, and test Ollama
+- **[Ollama Practice](05_ollama_practice.ipynb)** - Install, configure, and test Ollama
 
 ### Learning Objectives
 
@@ -61,9 +61,9 @@ This chapter covers cloud-based inference with Hugging Face and local deployment
 
 ### Quick Start
 
-1. Read [Local Inference Overview](local_inference_overview.md)
-2. Study [Inference Engines](inference_engines.md) guide
-3. Complete [Ollama Practice](ollama_practice.ipynb)
+1. Read [05 Local Inference Overview](05_local_inference_overview.md)
+2. Study [06 Inference Engines](06_inference_engines.md) guide
+3. Complete [Ollama Practice](05_ollama_practice.ipynb)
 4. Experiment with vLLM deployment
 5. Run performance benchmarks
 
@@ -132,4 +132,4 @@ After completing this chapter:
 - Build a production chatbot application
 - Implement load balancing for multiple GPUs
 - Explore model quantization techniques
-- Deploy inference services to production 
+- Deploy inference services to production
