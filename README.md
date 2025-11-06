@@ -242,6 +242,25 @@ Learn essential production skills for deploying and maintaining AI systems:
 
 ---
 
+## 📅 Project Timeline
+
+The course culminates in a capstone project that integrates all learned concepts. The project work begins in **Week 4** and concludes with a demo in **Week 8**.
+
+### Project Start (Week 4)
+- Complete your project proposal this week
+- Begin planning your capstone AI application
+- See [Week8](./Schedule.md#week-8-capstone-project-demo) for detailed requirements
+
+### Capstone Project (Week 8)
+Build a complete AI application that demonstrates mastery of all course concepts:
+- Development Environment Setup with Git and Conda
+- Clean Python implementation with proper error handling
+- AI System Design with function calling and prompt engineering
+- Model deployment (cloud and/or local)
+- Production considerations including containerization and monitoring
+
+---
+
 ## 💻 Technology Stack
 
 ### Core Technologies

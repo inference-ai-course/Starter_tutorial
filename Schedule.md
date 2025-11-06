@@ -90,6 +90,9 @@ This schedule organizes the AI Engineering Starter Tutorial into 6 weeks of stru
 - Create production-ready prompt templates
 - Evaluate prompt performance systematically
 
+### Project Start:
+- Complete Project proposal this week
+- See [Week8](#week-8-capstone-project-demo)
 ---
 
 ## Week 5: Model Interfaces and Hugging Face Platform
@@ -162,7 +165,7 @@ This schedule organizes the AI Engineering Starter Tutorial into 6 weeks of stru
 
 ---
 
-## Week 8: Capstone Project
+## Week 8: Capstone Project Demo
 **Focus:** Integrating all knowledge points into a comprehensive AI application
 
 ### Project Requirements:
@@ -206,20 +209,6 @@ Build a complete AI application that demonstrates mastery of all course concepts
 - **Innovation** (20%): Creative application of concepts
 - **Presentation** (20%): Clear demonstration and explanation
 
----
-
-## Prerequisites Mapping
-
-**Week 1 Prerequisites:** Basic computer literacy
-**Week 2 Prerequisites:** Completion of Week 1
-**Week 3 Prerequisites:** Completion of Week 2
-**Week 4 Prerequisites:** Completion of Week 3
-**Week 5 Prerequisites:** Completion of Weeks 3-4
-**Week 6 Prerequisites:** Completion of Weeks 4-5
-**Week 7 Prerequisites:** Completion of Weeks 5-6
-**Week 8 Prerequisites:** Completion of all previous weeks
-
----
 
 ## Success Tips
 
