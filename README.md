@@ -25,7 +25,6 @@ This tutorial is designed for developers who want to build production-ready AI a
 
 ### [Chapter 1: Tool Preparation](./Chapters/1/Chapter1.md)
 
-**Duration:** 4-5 hours (2 hours learning + 2-3 hours setup & practice)  
 **Focus:** Development environment setup and essential tools
 
 Master the foundational tools for modern AI development workflows:
@@ -47,7 +46,6 @@ Master the foundational tools for modern AI development workflows:
 
 ### [Chapter 2: Python and Environment Management](./Chapters/2/Chapter2.md)
 
-**Duration:** 10-12 hours (5 hours learning + 5-7 hours exercises & practice)  
 **Focus:** Python fundamentals and reproducible environments
 
 Build a solid Python foundation and learn professional environment management:
@@ -93,7 +91,6 @@ Build a solid Python foundation and learn professional environment management:
 
 ### [Chapter 3: AI Engineering Fundamentals](./Chapters/3/Chapter3.md)
 
-**Duration:** 14-18 hours (8 hours learning + 6-10 hours implementation & experimentation)  
 **Focus:** Function calling, prompt engineering, and model interfaces
 
 Learn to build reliable, production-ready AI systems:
@@ -141,7 +138,6 @@ Learn to build reliable, production-ready AI systems:
 
 ### [Chapter 4: Hugging Face Platform and Local Inference](./Chapters/4/Chapter4.md)
 
-**Duration:** 10-12 hours (5 hours learning + 5-7 hours deployment & testing)  
 **Focus:** Cloud-based and local AI model deployment
 
 Master both cloud and local inference strategies:
@@ -177,7 +173,6 @@ Master both cloud and local inference strategies:
 
 ### [Chapter 5: Resource Monitoring and Containerization](./Chapters/5/Chapter5.md)
 
-**Duration:** 8-10 hours (4 hours learning + 4-6 hours containerization & troubleshooting)  
 **Focus:** Production monitoring, debugging, and Docker deployment
 
 Learn essential production skills for deploying and maintaining AI systems:
@@ -220,13 +215,11 @@ Learn essential production skills for deploying and maintaining AI systems:
 
 ### Quick Start Path
 
-1. **Complete Chapter 1** - Set up your development environment (4-5 hours)
-2. **Work through Chapter 2** - Master Python and environments (10-12 hours)
-3. **Study Chapter 3** - Learn AI engineering fundamentals (14-18 hours)
-4. **Deploy with Chapter 4** - Build production inference systems (10-12 hours)
-5. **Master Chapter 5** - Production monitoring and containerization (8-10 hours)
-
-**Total Time Investment:** 46-57 hours for comprehensive mastery
+1. **Complete Chapter 1** - Set up your development environment
+2. **Work through Chapter 2** - Master Python and environments
+3. **Study Chapter 3** - Learn AI engineering fundamentals
+4. **Deploy with Chapter 4** - Build production inference systems
+5. **Master Chapter 5** - Production monitoring and containerization
 
 ### Alternative Learning Paths
 
