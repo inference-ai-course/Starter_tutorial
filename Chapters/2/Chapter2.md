@@ -16,17 +16,23 @@ By completing these modules, you will:
 
 ## Chapter Structure
 
-### [Part 1: Python Basics - Concepts](./python_basics_concepts.md)
+### [Part 1: Python Fundamentals](./01_python_fundamentals.md)
 - **Theoretical Foundation**: Clear explanations of all Python fundamentals
 - **Concept Coverage**: Variables, data structures, control flow, functions, modules, exceptions
 - **Best Practices**: Coding standards, error handling, and debugging strategies
 - **Reference Material**: Comprehensive guide for understanding Python concepts
 
-### [Part 2: Python Basics - Interactive Exercises](./python_basics_exercises.ipynb)
+### [Part 2: Python Basics - Interactive Exercises](./02_python_basics_exercises.ipynb)
 - **Hands-on Practice**: Jupyter notebook with 20+ interactive exercises
 - **Real-world Examples**: Practical coding scenarios and projects
 - **Step-by-step Learning**: Guided exercises from basic to advanced
 - **Immediate Feedback**: Test your code and see results instantly
+
+### [Part 3: Python Basics - Concepts](./03_python_basics_concepts.md)
+- **Theoretical Foundation**: Clear explanations of all Python fundamentals
+- **Concept Coverage**: Variables, data structures, control flow, functions, modules, exceptions
+- **Best Practices**: Coding standards, error handling, and debugging strategies
+- **Reference Material**: Comprehensive guide for understanding Python concepts
 
 ### [Part 4: Conda Environment Management](./04_conda_environments.md)
 - **Environment Creation**: Setting up isolated Python environments
