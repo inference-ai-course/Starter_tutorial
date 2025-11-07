@@ -37,13 +37,13 @@ By the end of this section, you will be able to:
 
 This section includes:
 
-1. **[Inference Engines](inference_engines.md)** - Complete guide to Ollama and vLLM
+1. **[Inference Engines](06_inference_engines.md)** - Complete guide to Ollama and vLLM
 
 ## Coding Practice
 
 Jupyter notebooks for hands-on learning:
 
-- **[Ollama Practice](ollama_practice.ipynb)** - Install and test Ollama
+- **[Ollama Practice](05_ollama_practice.ipynb)** - Install and test Ollama
 
 ## Suggested Learning Path
 

@@ -417,5 +417,5 @@ prompt = f"Generate image for user {anon_id}"
 
 ## Next Steps
 
-- Review **[Provider Selection and Failover](provider_selection.md)**
-- Practice secure authentication in **[Image Generation Practice](image_generation_practice.ipynb)**
+- Review **[Provider Selection and Failover](04_provider_selection.md)**
+- Practice secure authentication in **[Image Generation Practice](01_image_generation_practice.ipynb)**

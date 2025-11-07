@@ -704,7 +704,7 @@ This chapter covered essential techniques for monitoring and troubleshooting AI 
 4. **Profiling**: Performance and memory profiling with PyTorch
 5. **Error Handling**: Retry strategies, exponential backoff, circuit breakers
 
-Practice these concepts in the accompanying Jupyter notebook: [resource_monitoring_practice.ipynb](./resource_monitoring_practice.ipynb)
+Practice these concepts in the accompanying Jupyter notebook: [resource_monitoring_practice.ipynb](./01_resource_monitoring_practice.ipynb)
 
 ---
 

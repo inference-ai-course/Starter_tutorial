@@ -960,7 +960,7 @@ This chapter covered Docker fundamentals and containerization for AI projects:
 5. **Best Practices**: Optimization, security, resource management, health checks
 6. **Troubleshooting**: Common issues and debugging techniques
 
-Practice these concepts in the accompanying Jupyter notebook: [dockerization_practice.ipynb](./dockerization_practice.ipynb)
+Practice these concepts in the accompanying Jupyter notebook: [dockerization_practice.ipynb](./02_dockerization_practice.ipynb)
 
 ---
 

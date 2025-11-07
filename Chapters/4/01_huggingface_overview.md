@@ -471,9 +471,9 @@ demo.launch()
 
 This section is organized into the following components:
 
-1. **[Core Concepts](core_concepts.md)** - Detailed explanations of core concepts
-2. **[Authentication and Security](authentication_security.md)** - Best practices for credential management
-3. **[Provider Selection and Failover](provider_selection.md)** - Strategies for choosing and managing providers
+1. **[Core Concepts](02_core_concepts.md)** - Detailed explanations of core concepts
+2. **[Authentication and Security](03_authentication_security.md)** - Best practices for credential management
+3. **[Provider Selection and Failover](04_provider_selection.md)** - Strategies for choosing and managing providers
 
 ## Coding Practice
 
@@ -536,4 +536,4 @@ You should be able to demonstrate:
 ## Next Steps
 
 After completing this section, proceed to:
-- **[Local Inference Endpoints](local_inference_overview.md)** - Learn about Ollama and vLLM for local deployment
+- **[Local Inference Endpoints](05_local_inference_overview.md)** - Learn about Ollama and vLLM for local deployment

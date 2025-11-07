@@ -597,7 +597,7 @@ pip install vllm --extra-index-url https://download.pytorch.org/whl/cu124
 
 # Next Steps
 
-- Complete **[Ollama Practice Notebook](ollama_practice.ipynb)**
+- Complete **[Ollama Practice Notebook](05_ollama_practice.ipynb)**
 - Explore vLLM with hands-on exercises
 - Run performance benchmarks
 - Choose the right engine for your use case

@@ -594,6 +594,6 @@ Understanding these core concepts enables you to:
 
 ## Next Steps
 
-- Proceed to **[Authentication and Security](authentication_security.md)** for detailed credential management
-- Review **[Provider Selection Guide](provider_selection.md)** for choosing the right provider
+- Proceed to **[Authentication and Security](03_authentication_security.md)** for detailed credential management
+- Review **[Provider Selection Guide](04_provider_selection.md)** for choosing the right provider
 - Practice with the Jupyter notebooks

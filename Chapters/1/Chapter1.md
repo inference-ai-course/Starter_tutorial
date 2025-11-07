@@ -24,7 +24,7 @@ By completing this chapter, you will be able to:
 
 ## Chapter Structure
 
-### [Part 1: Shell and Command Line Fundamentals](Shell.md)
+### [Part 1: Shell and Command Line Fundamentals](01_shell_command_line.md)
 
 Master the command-line interface for efficient development and automation.
 
@@ -49,7 +49,7 @@ Master the command-line interface for efficient development and automation.
 
 ---
 
-### [Part 2: Git - Version Control and Collaboration](Git.md)
+### [Part 2: Git - Version Control and Collaboration](02_git_version_control.md)
 
 Learn to track code changes, collaborate with teams, and maintain project history.
 
@@ -68,7 +68,7 @@ Learn to track code changes, collaborate with teams, and maintain project histor
 
 ---
 
-### [Part 3: SSH - Secure Remote Development](SSH.md)
+### [Part 3: SSH - Secure Remote Development](03_ssh_remote_development.md)
 
 Master secure remote access for development on cloud servers and HPC clusters.
 
@@ -87,7 +87,7 @@ Master secure remote access for development on cloud servers and HPC clusters.
 
 ---
 
-### [Part 4: Conda - Environment and Package Management](Conda.md)
+### [Part 4: Conda - Environment and Package Management](04_conda_environment_management.md)
 
 Create isolated, reproducible Python environments for different projects.
 
@@ -106,7 +106,7 @@ Create isolated, reproducible Python environments for different projects.
 
 ---
 
-### [Part 5: Jupyter - Interactive Computing](Jupyter.md)
+### [Part 5: Jupyter - Interactive Computing](05_jupyter_interactive_computing.md)
 
 Use Jupyter notebooks for interactive development, visualization, and documentation.
 
@@ -129,14 +129,14 @@ Use Jupyter notebooks for interactive development, visualization, and documentat
 
 **Interactive Jupyter Notebooks for Hands-on Practice:**
 
-#### [Git Practice Lab](git_practice.ipynb)
+#### [Git Practice Lab](06_git_practice.ipynb)
 - Initialize and configure Git repositories
 - Practice staging, committing, and tracking changes
 - Create and merge branches
 - Resolve merge conflicts
 - Work with `.gitignore` files
 
-#### [Conda Practice Lab](conda_practice.ipynb)
+#### [Conda Practice Lab](07_conda_practice.ipynb)
 - Create and manage conda environments
 - Install packages with conda and pip
 - Set up AI/ML environment (Python 3.10+, PyTorch 2.6.0+, CUDA 12.4+)
@@ -144,14 +144,14 @@ Use Jupyter notebooks for interactive development, visualization, and documentat
 - Register kernels for Jupyter
 - **Real-world exercise**: Analyze Titanic dataset with pandas (data exploration, visualization, feature engineering)
 
-#### [SSH Setup Lab](ssh_setup_lab.ipynb)
+#### [SSH Setup Lab](08_ssh_setup_lab.ipynb)
 - Generate and manage SSH keys
 - Configure SSH for convenient access
 - Set up VS Code Remote-SSH
 - Practice port forwarding
 - Implement security best practices
 
-#### [Jupyter Basics Lab](jupyter_basics_lab.ipynb)
+#### [Jupyter Basics Lab](09_jupyter_basics_lab.ipynb)
 - Master notebook cells and keyboard shortcuts
 - Use magic commands effectively
 - Manage kernels and environments
@@ -208,8 +208,8 @@ Use this chapter as a reference guide for:
 Choose your learning path:
 
 - **New to command line?** Start with Shell fundamentals and work through each section
-- **Know Git but new to remote development?** Jump to [SSH](SSH.md) and [VS Code Remote setup](SSH.md#vs-code-remote-ssh)
-- **Python developer new to Conda?** Focus on [Conda Environment Management](Conda.md)
+- **Know Git but new to remote development?** Jump to [SSH](03_ssh_remote_development.md) and [VS Code Remote setup](03_ssh_remote_development.md#vs-code-remote-ssh)
+- **Python developer new to Conda?** Focus on [Conda Environment Management](04_conda_environment_management.md)
 - **Ready for practice?** Go straight to the [Hands-on Practice Labs](#part-6-hands-on-practice-labs)
 
 ---
