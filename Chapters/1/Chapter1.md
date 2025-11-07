@@ -129,14 +129,14 @@ Use Jupyter notebooks for interactive development, visualization, and documentat
 
 **Interactive Jupyter Notebooks for Hands-on Practice:**
 
-#### [Git Practice Lab](06_git_practice.ipynb)
+#### [Git Practice Lab](02_git_practice.ipynb)
 - Initialize and configure Git repositories
 - Practice staging, committing, and tracking changes
 - Create and merge branches
 - Resolve merge conflicts
 - Work with `.gitignore` files
 
-#### [Conda Practice Lab](07_conda_practice.ipynb)
+#### [Conda Practice Lab](04_conda_practice.ipynb)
 - Create and manage conda environments
 - Install packages with conda and pip
 - Set up AI/ML environment (Python 3.10+, PyTorch 2.6.0+, CUDA 12.4+)
@@ -144,14 +144,14 @@ Use Jupyter notebooks for interactive development, visualization, and documentat
 - Register kernels for Jupyter
 - **Real-world exercise**: Analyze Titanic dataset with pandas (data exploration, visualization, feature engineering)
 
-#### [SSH Setup Lab](08_ssh_setup_lab.ipynb)
+#### [SSH Setup Lab](03_ssh_setup_lab.ipynb)
 - Generate and manage SSH keys
 - Configure SSH for convenient access
 - Set up VS Code Remote-SSH
 - Practice port forwarding
 - Implement security best practices
 
-#### [Jupyter Basics Lab](09_jupyter_basics_lab.ipynb)
+#### [Jupyter Basics Lab](05_jupyter_basics_lab.ipynb)
 - Master notebook cells and keyboard shortcuts
 - Use magic commands effectively
 - Manage kernels and environments

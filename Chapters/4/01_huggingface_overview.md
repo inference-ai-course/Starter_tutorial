@@ -479,8 +479,8 @@ This section is organized into the following components:
 
 The hands-on coding exercises are provided in Jupyter notebooks:
 
-- **[Image Generation Practice](image_generation_practice.ipynb)** - Text-to-image inference with provider comparison
-- **[Chat Inference Practice](chat_inference_practice.ipynb)** - Conversational AI with performance benchmarking
+- **[Image Generation Practice](01_image_generation_practice.ipynb)** - Text-to-image inference with provider comparison
+- **[Chat Inference Practice](02_chat_inference_practice.ipynb)** - Conversational AI with performance benchmarking
 
 ## Suggested Learning Path
 

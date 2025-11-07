@@ -274,7 +274,7 @@ finally:
 
 ## Next Steps
 
-Now that you understand the concepts, practice them with the accompanying Jupyter notebook: `python_basics_exercises.ipynb`
+Now that you understand the concepts, practice them with the accompanying Jupyter notebook: `02_python_basics_exercises.ipynb`
 
 The notebook contains:
 - Interactive coding exercises for each concept
