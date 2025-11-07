@@ -1156,12 +1156,12 @@ In this section, you learned:
 
 ## Next Steps
 
-Now you're ready to move on to [Part 3: Debugging Techniques](./03_debugging.md), where you'll learn:
+Now you're ready to move on to [Part 3: Python Basics - Concepts](./03_python_basics_concepts.md), where you'll learn:
 
-- Systematic debugging approaches
-- Using Python's built-in debugger (pdb)
-- Professional logging practices
-- Common debugging scenarios and solutions
+- Advanced Python concepts and best practices
+- Code organization and structure
+- Professional development techniques
+- Real-world Python patterns
 
 ## Additional Resources
 
